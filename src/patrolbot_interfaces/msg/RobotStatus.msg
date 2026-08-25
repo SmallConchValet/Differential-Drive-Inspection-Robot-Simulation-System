@@ -1,0 +1,17 @@
+uint8 STATUS_IDLE=0
+uint8 STATUS_MOVING=1
+uint8 STATUS_DETECTING=2
+uint8 STATUS_PAUSED=3
+uint8 STATUS_EMERGENCY_STOP=4
+uint8 STATUS_WAIT_RESUME=5
+std_msgs/Header header
+geometry_msgs/Pose pose
+float32 linear_velocity
+float32 angular_velocity
+float32 battery_level
+uint8 status
+uint8 patrol_mode
+bool obstacle_present
+float32 closest_obstacle_distance
+uint32 current_waypoint_index
+uint32 total_waypoints

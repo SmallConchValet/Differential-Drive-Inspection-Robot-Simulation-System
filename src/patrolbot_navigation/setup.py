@@ -1,0 +1,2 @@
+from setuptools import setup
+p='patrolbot_navigation'; setup(name=p,version='0.1.0',packages=[p],data_files=[('share/ament_index/resource_index/packages',['resource/'+p]),('share/'+p,['package.xml'])],install_requires=['setuptools'],zip_safe=True,maintainer='student',maintainer_email='student@example.com',description='Patrol task manager',license='Apache-2.0',entry_points={'console_scripts':['patrol_task_manager=patrolbot_navigation.manager:main']})

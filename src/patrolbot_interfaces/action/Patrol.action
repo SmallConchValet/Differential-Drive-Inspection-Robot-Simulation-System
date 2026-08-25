@@ -1,0 +1,12 @@
+patrolbot_interfaces/Waypoint[] waypoints
+---
+bool success
+uint32 completed_waypoints
+builtin_interfaces/Duration total_time
+string message
+---
+uint32 current_waypoint_index
+uint32 total_waypoints
+geometry_msgs/PoseStamped current_pose
+float32 distance_to_goal
+uint8 robot_status

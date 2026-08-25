@@ -1,0 +1,12 @@
+waypoint_controller:
+  ros__parameters: {use_sim_time: true, control_frequency: 20.0, linear_kp: 0.8, angular_kp: 1.5, final_angular_kp: 1.2, max_linear_velocity: 0.5, max_angular_velocity: 1.0, rotate_in_place_threshold: 0.5, goal_tolerance: 0.15, yaw_tolerance: 0.10, waypoint_timeout: 60.0, tf_failure_timeout: 1.0}
+safety_node:
+  ros__parameters: {use_sim_time: true, slowdown_distance: 0.70, emergency_stop_distance: 0.40, scan_half_angle: 0.261799}
+velocity_arbiter:
+  ros__parameters: {use_sim_time: true, cmd_vel_timeout: 0.30, output_frequency: 20.0, max_linear_velocity: 0.5, max_angular_velocity: 1.0}
+patrol_task_manager:
+  ros__parameters: {use_sim_time: true, wait_time_at_waypoint: 3.0}
+robot_status_node:
+  ros__parameters: {use_sim_time: true, publish_frequency: 5.0}
+patrol_monitor_node:
+  ros__parameters: {use_sim_time: true}

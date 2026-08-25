@@ -1,0 +1,2 @@
+from setuptools import setup
+p='patrolbot_monitor'; setup(name=p,version='0.1.0',packages=[p],data_files=[('share/ament_index/resource_index/packages',['resource/'+p]),('share/'+p,['package.xml'])],install_requires=['setuptools'],zip_safe=True,maintainer='student',maintainer_email='student@example.com',description='Patrol monitor',license='Apache-2.0',entry_points={'console_scripts':['patrol_monitor_node=patrolbot_monitor.nodes:monitor_main','robot_status_node=patrolbot_monitor.nodes:status_main']})

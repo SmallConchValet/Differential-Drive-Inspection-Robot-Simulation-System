@@ -1,0 +1,10 @@
+<?xml version="1.0"?><sdf version="1.6"><world name="patrol_world"><include><uri>model://sun</uri></include><include><uri>model://ground_plane</uri></include>
+<model name="room"><static>true</static>
+<link name="walls">
+<collision name="south"><pose>4 0 .5 0 0 0</pose><geometry><box><size>8 .1 1</size></box></geometry></collision><visual name="south_v"><pose>4 0 .5 0 0 0</pose><geometry><box><size>8 .1 1</size></box></geometry></visual>
+<collision name="north"><pose>4 6 .5 0 0 0</pose><geometry><box><size>8 .1 1</size></box></geometry></collision><visual name="north_v"><pose>4 6 .5 0 0 0</pose><geometry><box><size>8 .1 1</size></box></geometry></visual>
+<collision name="west"><pose>0 3 .5 0 0 0</pose><geometry><box><size>.1 6 1</size></box></geometry></collision><visual name="west_v"><pose>0 3 .5 0 0 0</pose><geometry><box><size>.1 6 1</size></box></geometry></visual>
+<collision name="east"><pose>8 3 .5 0 0 0</pose><geometry><box><size>.1 6 1</size></box></geometry></collision><visual name="east_v"><pose>8 3 .5 0 0 0</pose><geometry><box><size>.1 6 1</size></box></geometry></visual>
+<collision name="block1"><pose>1.5 2 .5 0 0 0</pose><geometry><box><size>.6 .6 1</size></box></geometry></collision><visual name="block1_v"><pose>1.5 2 .5 0 0 0</pose><geometry><box><size>.6 .6 1</size></box></geometry></visual>
+<collision name="block2"><pose>6.2 4.5 .5 0 0 0</pose><geometry><box><size>.8 .6 1</size></box></geometry></collision><visual name="block2_v"><pose>6.2 4.5 .5 0 0 0</pose><geometry><box><size>.8 .6 1</size></box></geometry></visual>
+</link></model></world></sdf>
