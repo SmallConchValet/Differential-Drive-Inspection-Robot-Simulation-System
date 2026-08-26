@@ -1,0 +1,16 @@
+# ROS 编译产物
+build/
+devel/
+install/
+log/
+*.pyc
+__pycache__/
+
+# IDE 和编辑器
+# .vscode/ 需要提交，保存本项目统一的编辑器配置
+.idea/
+*.swp
+*.swo
+
+# 系统文件
+.DS_Store
