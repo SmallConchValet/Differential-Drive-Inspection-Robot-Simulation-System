@@ -14,6 +14,9 @@ def generate_launch_description():
         'urdf',
         'patrolbot.urdf'
     )
+    with open(urdf_file, 'r') as file:
+        robot_description = file.read()
+
 
     return LaunchDescription([
         Node(
@@ -25,7 +28,7 @@ def generate_launch_description():
         ),
 
         Node(
-            package=='joint_state_publisher_gui',
+            package='joint_state_publisher_gui',
             executable='joint_state_publisher_gui'
         ),
 
