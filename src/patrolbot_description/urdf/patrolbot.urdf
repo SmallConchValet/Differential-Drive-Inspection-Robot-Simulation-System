@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<robot name="patrolbot">
+    <link name="base_footprint" />
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <box size="0.40 0.26 0.15" />
+            </geometry>
+            <material name="body_color">
+                <color rgba="0.2 0.4 0.8 1.0" />
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.40 0.26 0.15" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="5.0" />
+            <inertia ixx="0.0375"
+                ixy="0.0"
+                ixz="0.0"
+                iyy="0.076"
+                iyz="0.0"
+                izz="0.0948" />
+        </inertial>
+    </link>
+    <joint name="base_footprint_joint"
+        type="fixed">
+        <parent link="base_footprint" />
+        <child link="base_link" />
+        <origin xyz="0 0 0.10" rpy="0 0 0" />
+    </joint>
+    <link name="left_wheel_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.5708 0 0" />
+            <geometry>
+                <cylinder radius="0.05" length="0.04" />
+            </geometry>
+            <material name="wheel_color">
+                <color rgba="0.1 0.1 0.1 1.0" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="1.5708 0 0" />
+            <geometry>
+                <cylinder radius="0.05" length="0.04" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.5" />
+            <inertia ixx="0.00073" ixy="0.0" ixz="0.0" iyy="0.00125" iyz="0.0" izz="0.00073" />
+        </inertial>
+    </link>
+    <joint
+        name="left_wheel_joint" type="continuous">
+        <parent link="base_link" />
+        <child link="left_wheel_link" />
+        <origin xyz="0 0.15 -0.05" rpy="0 0 0" />
+        <axis xyz="0 1 0" />
+    </joint>
+    <link name="right_wheel_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.5708 0 0" />
+            <geometry>
+                <cylinder radius="0.05" length="0.04" />
+            </geometry>
+            <material name="wheel_color">
+                <color rgba="0.1 0.1 0.1 1.0" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="1.5708 0 0" />
+            <geometry>
+                <cylinder radius="0.05" length="0.04" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.5" />
+            <inertia ixx="0.00073" ixy="0.0" ixz="0.0" iyy="0.00125" iyz="0.0" izz="0.00073" />
+        </inertial>
+    </link>
+    <joint
+        name="right_wheel_joint" type="continuous">
+        <parent link="base_link" />
+        <child link="right_wheel_link" />
+        <origin xyz="0 -0.15 -0.05" rpy="0 0 0" />
+        <axis xyz="0 1 0" />
+    </joint>
+    <link name="caster_link">
+        <visual>
+            <geometry>
+                <geometry>
+                    <sphere radius="0.035" />
+                </geometry>
+                <material name="caster_color">
+                    <color rgba="0.5 0.5 0.5 1.0" />
+                </material>
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <geometry>
+                    <sphere radius="0.035" />
+                </geometry>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.2" />
+            <inertia
+                ixx="0.000098"
+                ixy="0"
+                ixz="0"
+                iyy="0.000098"
+                iyz="0"
+                izz="0.000098" />
+        </inertial>
+    </link>
+    <joint name="caster_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="caster_link"/>
+        <origin xyz="0.15 0 -0.065" rpy="0 0 0"/>
+    </joint>
+    <link name="lidar_link">
+        <visual>
+            <geometry>
+                <cylinder radius="0.04" length="0.04"/>
+            </geometry>
+            <material name="lidar_color">
+                <color rgba="0.1 0.1 0.1 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.04" length="0.04"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.2"/>
+            <inertia
+                ixx="0.0001"
+                ixy="0"
+                ixz="0"
+                iyy="0.0001"
+                iyz="0"
+                izz="0.00016"/>
+        </inertial>
+    </link>
+    <joint name="lidar_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="lidar_link"/>
+        <origin xyz="0.08 0 0.115" rpy="0 0 0"/>
+    </joint>
+    <link name="camera_link">
+        <visual>
+            <geometry>
+                <box size="0.05 0.08 0.04"/>
+            </geometry>
+            <material name="camera_color">
+                <color rgba="0.2 0.2 0.2 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.05 0.08 0.04"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.15"/>
+            <inertia
+                ixx="0.0001"
+                ixy="0"
+                ixz="0"
+                iyy="0.0001"
+                iyz="0"
+                izz="0.0001"/>
+            </inertial>
+    </link>
+    <joint name="camera_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="camera_link"/>
+        <origin xyz="0.19 0 0.05" rpy="0 0 0"/>
+    </joint>
+        
+    <link name="camera_optical_frame"/>
+    <joint name="camera_optical_joint" type="fixed">
+        <parent link="camera_link"/>
+        <child link="camera_optical_frame"/>
+        <origin xyz="0 0 0" rpy="-1.5708 0 -1.5708"/>
+    </joint>
+
+
+</robot>
